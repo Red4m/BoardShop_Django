@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404
 
 from snowboard.models import Snowboard
@@ -5,8 +6,9 @@ from snowboard.models import Snowboard
 
 def get_home(request):
     snowboard = Snowboard.objects.all()
+    user = User.objects.all()
     return render(
-        request, "main.html", {"snowboard": snowboard},
+        request, "index.html", {"snowboard": snowboard, "user": user},
     )
 
 

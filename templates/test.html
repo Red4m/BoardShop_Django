@@ -1,106 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="/MDB-UI-KIT-Free-3.1.0/img/mdb-favicon.ico" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-    />
-    <!-- MDB -->
-    <link rel="stylesheet" href="/MDB-UI-KIT-Free-3.1.0/css/mdb.min.css" />
-  </head>
-  <body>
-    <!-- Start your project here-->
-    <!-- Carousel wrapper -->
-    <div
-    id="carouselBasicExample"
-    class="carousel slide carousel-fade"
-    data-mdb-ride="carousel"
-    >
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"></li>
-        <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"></li>
-        <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"></li>
-      </ol>
+{% extends 'base.html'%}
+{% load static %}
 
-      <!-- Inner -->
-      <div class="carousel-inner">
-        <!-- Single item -->
-        <div class="carousel-item active">
-          <img
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
-            class="d-block w-100"
-            alt="..."
-          />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </div>
-        </div>
 
-        <!-- Single item -->
-        <div class="carousel-item">
-          <img
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
-            class="d-block w-100"
-            alt="..."
-          />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        </div>
+{% block title %}
+Product {{ article.title }}
+{% endblock %}
 
-        <!-- Single item -->
-        <div class="carousel-item">
-          <img
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
-            class="d-block w-100"
-            alt="..."
-          />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
-        </div>
-      </div>
-      <!-- Inner -->
 
-      <!-- Controls -->
-      <a
-        class="carousel-control-prev"
-        href="#carouselBasicExample"
-        role="button"
-        data-mdb-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#carouselBasicExample"
-        role="button"
-        data-mdb-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </a>
+{%block detail%}
+<div class="container">
+        <img src="{{ snowboard.image.url}}" alt="..." id><br>
+        <a>Сноуборд {{ snowboard.name }}</a><br>
+        <a>Цена{{ snowboard.cost }} руб.</a><br>
+        <a>Описание {{ snowboard.description }}</a><br>
+        <a>Страна производитель {{ snowboard.manufacturer_country }}</a><br>
     </div>
-    <!-- Carousel wrapper -->
-    <!-- End your project here-->
-  </body>
 
-  <!-- MDB -->
-  <script type="text/javascript" src="/MDB-UI-KIT-Free-3.1.0/js/mdb.min.js"></script>
-  <!-- Custom scripts -->
-  <script type="text/javascript"></script>
-</html>
+
+{%endblock%}
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">

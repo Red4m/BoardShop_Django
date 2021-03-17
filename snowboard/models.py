@@ -1,3 +1,4 @@
+from PIL import Image
 from django.db import models
 
 
@@ -10,3 +11,12 @@ class Snowboard(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save(self):
+        super().save()
+        img = Image.open(self.image.path)
+
+        if img.height > 325 or img.width > 155:
+            output_size = (325, 155)
+            img.thumbnail(output_size)
+            img.save(self.image.path)

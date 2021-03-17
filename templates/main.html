@@ -46,6 +46,8 @@
             </div>
         </nav>
 
+
+
         <div
         id="carouselBasicExample"
         class="carousel slide carousel-fade"
@@ -122,25 +124,28 @@
           </a>
         </div>
 
+        {% if not user.is_athenticated %}
+            <div class="container" style="padding-top: 25px">
+                <div class="row">
+                    {% for board in snowboard %}
+                        <div class="col-4">
+        {#                    <button type="button" class="btn-secondary btn-lg" data-bs-toggle="button" autocomplete="off">#}
+                            <a href="{{ board.pk }}">
+                                <b>{{ board.name }}</b>
+                            </a> <br>
+        {#                    </button>#}
+                {#            <a href="{{ article.pk }}">link</a>#}
 
-        <div class="container" style="padding-top: 25px">
-            <div class="row">
-                {% for board in snowboard %}
-                    <div class="col-4">
-    {#                    <button type="button" class="btn-secondary btn-lg" data-bs-toggle="button" autocomplete="off">#}
-                        <a href="{{ board.pk }}">
-                            <b>{{ board.name }}</b>
-                        </a> <br>
-    {#                    </button>#}
-            {#            <a href="{{ article.pk }}">link</a>#}
-
-                        <b>{{ board.cost }} руб.</b>
-    {#                    <b>{{ article.content }}</b>#}
-                        <hr>
-                    </div>
-                {% endfor %}
+                            <b>{{ board.cost }} руб.</b>
+        {#                    <b>{{ article.content }}</b>#}
+                            <hr>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
+        {% else %}
+            <a>not found</a>
+        {% endif %}
 
 {#      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">#}
     </body>
