@@ -8,7 +8,7 @@ Product {{ article.title }}
 
 
 {%block detail%}
- <div
+    <div
         id="carouselBasicExample"
         class="carousel slide carousel-fade"
         data-mdb-ride="carousel"
@@ -84,28 +84,100 @@ Product {{ article.title }}
           </a>
         </div>
 
-        {% if not user.is_athenticated %}
-            <div class="container" style="padding-top: 25px">
-                <div class="row">
-                    {% for board in snowboard %}
-                        <div class="col-4">
+        <br>
+
+
+        <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+{#                {% block py %}#}
+{#                    {% index = 0 %}#}
+{#                {% endblock %}#}
+                {% for board in snowboard %}
+
+                  <div class="col-lg-4">
+
+{#                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>#}
+{#                        <img src="{{ snowboard.image.url}}" alt="..." id>#}
+{#                    </svg>#}
+
+                    <h2>{{ board.name }}</h2>
+                    <b>{{ board.cost }} руб.</b>
+                    <p>{{ board.description }}</p>
+                    <p><a class="btn btn-secondary" href="{{ board.pk }}">View details »</a></p>
+                  </div><!-- /.col-lg-4 -->
+
+
+                {% endfor %}
+            </div><!-- /.row -->
+
+
+                <!-- START THE FEATURETTES -->
+
+                <hr class="featurette-divider">
+
+            <div class="row featurette">
+              <div class="col-md-7">
+                <h2 class="featurette-heading">Burton<span class="text-muted">  It’ll blow your mind.</span></h2>
+                <p class="lead">Now the Burton Snowboards company produces more than a hundred items: boards, sports uniforms, shoes, bindings, masks, helmets for guys, girls, and also children. To attract attention to its products, Burton does a lot of advertising work: it sponsors major snowboarding competitions and the best professional athletes, including Shaun White, Terje Haakonsen, DCP, Jussi Oksanen, Jeremy Jones, Keir Dillon, Tadashi Fuse and others.</p>
+              </div>
+              <div class="col-md-5">
+                <img src="../media/images/images.jpeg" class="card-img-top" width="500" height="500">
+              </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+              <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">QuickSilver  <span class="text-muted"> See for yourself.</span></h2>
+                <p class="lead">Quiksilver, Inc. Is a company that is one of the largest manufacturers of shoes, clothing and accessories for surfing, snowboarding, skateboarding and similar sports. Founded by Alan Green in 1969 in Torquay, Victoria, Australia. Today the head office is based in Biarizza, France.</p>
+              </div>
+              <div class="col-md-5 order-md-1">
+                <img src="../media/images/images.png" class="card-img-top" width="500" height="500">
+              </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+              <div class="col-md-7">
+                <h2 class="featurette-heading">Union <span class="text-muted"> Checkmate.</span></h2>
+                <p class="lead">Controlling our full circle supply chain assures a superior product from start to finish. From chairlift meetings, to paper sketches, then CAD Designs... Prototypes, testing, and tooling... All Union Bindings are developed, produced, and shipped inhouse with zero outsourcing or 3rd party middlemen cutting into the value of our final product. Union is THE only conventional binding supplier who owns and operates its own production facility.</p>
+              </div>
+              <div class="col-md-5">
+                <img src="../media/images/union-profile.jpg" class="card-img-top" width="500" height="500">
+              </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <!-- /END THE FEATURETTES -->
+        </div>
+
+{#        {% if not user.is_athenticated %}#}
+{#            <div class="container" style="padding-top: 25px">#}
+{#                <div class="row">#}
+{#                    {% for board in snowboard %}#}
+{#                        <div class="col-4">#}
         {#                    <button type="button" class="btn-secondary btn-lg" data-bs-toggle="button" autocomplete="off">#}
-                            <a href="{{ board.pk }}">
-                                <b>{{ board.name }}</b>
-                            </a> <br>
+{#                            <a href="{{ board.pk }}">#}
+{#                                <b>{{ board.name }}</b>#}
+{#                            </a> <br>#}
         {#                    </button>#}
                 {#            <a href="{{ article.pk }}">link</a>#}
-
-                            <b>{{ board.cost }} руб.</b>
+{##}
+{#                            <b>{{ board.cost }} руб.</b>#}
         {#                    <b>{{ article.content }}</b>#}
-                            <hr>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        {% else %}
-            <a>not found</a>
-        {% endif %}
+{#                            <hr>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#            </div>#}
+{#        {% else %}#}
+{#            <a>not found</a>#}
+{#        {% endif %}#}
 
 
 {%endblock%}
