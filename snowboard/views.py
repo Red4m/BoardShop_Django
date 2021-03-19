@@ -18,3 +18,9 @@ def get_one_board(request, pk):
     return render(
         request, "one_snowboard.html", {"snowboard": snowboard},
     )
+
+
+def get_sign_in_page(request):
+    return render(
+        request, "login.html",
+    )
