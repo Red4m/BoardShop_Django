@@ -24,3 +24,5 @@ def get_sign_in_page(request):
     return render(
         request, "login.html",
     )
+
+
