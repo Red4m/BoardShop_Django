@@ -20,9 +20,9 @@ def get_one_board(request, pk):
     )
 
 
-def get_sign_in_page(request):
-    return render(
-        request, "login.html",
-    )
+# def get_sign_in_page(request):
+#     return render(
+#         request, "login1.html",
+#     )
 
 

@@ -6,7 +6,16 @@
 login
 {% endblock %}
 
-{%block detail%}
+{% block detail %}
+    <h1>Create an account</h1>
+    <p>Please, sign up using the following form:</p>
+    <form action="." method="post">
+        {{ user_form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Create my account"></p>
+    </form>
+{% endblock %}
+{%block content%}
 <div class="container">
     <!-- Pills navs -->
     <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
@@ -68,10 +77,13 @@ login
           <p class="text-center">or:</p>
 
           <!-- Email input -->
+
             <form method="POST">
-                {% csrf_token %}
-                {{ forms }}
+{#                {% csrf_token %}#}
+{#                {{ forms }}#}
 {#                    <button type="submit" class="btn btn-ouline-warning">Войти</button>#}
+{#               <form method="post" action="{% url 'login' %}">#}
+
 
               <div class="form-outline mb-4">
                 <input type="email" id="loginName" class="form-control" />
